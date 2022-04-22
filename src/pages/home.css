@@ -34,6 +34,9 @@
 
     height: 80vh;
     overflow-y: scroll;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+    user-select: none;
 }
 
 .user,.error{
@@ -50,10 +53,12 @@
     transition: background 0.5s;
 }
 .error{
-    height: 100px;
+    height: 100vh;
     font-weight: 700;
     justify-content: center;
-    background-color: rgba(0,0,0,0.05);
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
 }
 
 .user:hover{

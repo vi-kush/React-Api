@@ -72,7 +72,7 @@ const Home = () => {
                     </Row>
                 </Container>
             }
-        </div> ) || <div className="error">Error Occured!! Please Refresh the Page</div>
+        </div> ) || <div className="error">No Data To Show.<span> Error Occured!! Please Refresh the Page</span></div>
     )
 }
 
