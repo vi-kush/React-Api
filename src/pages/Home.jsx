@@ -33,7 +33,7 @@ const Home = () => {
     return (
         (!error && <div className="home">
             {
-                (loading && <Loader/>) || <Container className="p-3 homeContainer">
+                (loading && <Loader/>) || <Container fluid className="p-3 homeContainer">
                     <Row className="mt-2">
                         <Col className="users">
                             <div className="title">Users List</div>
@@ -48,10 +48,10 @@ const Home = () => {
                                 }
                             </Container>
                         </Col>
-                        <Col className="userDetails">
+                        <Col className="userDetails px-5">
                             <div className="title">User Details</div>
                             {   (!userDetail && <LoaderText/>) || 
-                                <Container fluid className="userDetailsContainer">
+                                <Container className="userDetailsContainer">
                                     <img src={loadingUser ? '/loader.svg' : userDetail.avatar} alt="userImg" width="50px" onError={e=>{e.currentTarget.src="/avatar.png";}} onLoad={() => {setLoadingUser(false)}}/>
                                     <h4>@{userDetail.profile.username}</h4>
                                     <p>{userDetail.Bio} </p>
