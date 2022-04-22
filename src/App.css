@@ -1,0 +1,9 @@
+.app{
+  min-height: 100vh;
+  background: rgb(251, 253, 255);
+}
+.app-body{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
