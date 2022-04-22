@@ -8,6 +8,7 @@ import LoaderText from '../components/loader/LoaderText'
 const Home = () => {
     
     const [loading,setLoading] = useState(true);
+    const [loadingUser,setLoadingUser] = useState(true);
     const [error,setError] = useState(false);
     const [userData, setUserData] = useState(null);
     const [userDetail, setUserDetail] = useState(null);
@@ -49,9 +50,9 @@ const Home = () => {
                         </Col>
                         <Col className="userDetails">
                             <div className="title">User Details</div>
-                            {   (!userDetail && <LoaderText/>) ||
+                            {   (!userDetail && <LoaderText/>) || 
                                 <Container fluid className="userDetailsContainer">
-                                    <img src={userDetail.avatar} alt="user img" width="50px" onError={e=>e.currentTarget.src="/avatar.png"} />
+                                    <img src={loadingUser ? '/loader.svg' : userDetail.avatar} alt="userImg" width="50px" onError={e=>{e.currentTarget.src="/avatar.png";}} onLoad={() => {setLoadingUser(false)}}/>
                                     <h4>@{userDetail.profile.username}</h4>
                                     <p>{userDetail.Bio} </p>
                                     <div>
